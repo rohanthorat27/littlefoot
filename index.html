@@ -2,13 +2,112 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Littlefoot</title>
+    <!-- Fonts and Littlefoot Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/littlefoot/dist/littlefoot.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Color Palette */
+        :root {
+            --primary-color: #4a90e2;
+            /* Main blue color */
+            --secondary-color: #ff6347;
+            /* Tomato color for accents */
+            --background-color: #f0f4f8;
+            /* Light gray background */
+            --article-bg-color: #ffffff;
+            /* White background for article */
+            --text-color: #333;
+            --subtext-color: #666;
+            --highlight-color: #f9d342;
+            /* Yellow highlight */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        article {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: var(--article-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+            border-left: 5px solid var(--primary-color);
+            /* Add border accent */
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        sup {
+            font-size: 12px;
+            vertical-align: super;
+            cursor: pointer;
+            background-color: var(--highlight-color);
+            /* Highlight for the footnotes */
+            color: var(--text-color);
+            padding: 0 5px;
+            border-radius: 4px;
+        }
+
+        sup a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Styling for footnote references */
+        .footnotes hr {
+            margin-top: 40px;
+            border: none;
+            border-top: 2px solid var(--primary-color);
+        }
+
+        .footnotes ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+
+        .footnotes ol p {
+            font-size: 16px;
+            color: var(--subtext-color);
+            background-color: var(--highlight-color);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .reversefootnote {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Hover effects */
+        sup:hover,
+        .reversefootnote:hover {
+            color: var(--secondary-color);
+            background-color: var(--primary-color);
+            /* Reverse hover for footnotes */
+        }
+    </style>
 </head>
 
 <body>
     <article>
         <p>
-            This shouldn't work. <sup id="fnref:2"><a href="#fn:2" class="footnote">...</a></sup>
+            This shouldn't work. <sup id="fnref:2"><a href="#fn:2" class="footnote">1</a></sup>
         </p>
         <aside class="footnotes">
             <hr>
@@ -19,7 +118,7 @@
             </ol>
         </aside>
         <p>
-            This should work. <sup id="fnref:4"><a href="#fn:4" class="footnote">...</a></sup>
+            This should work. <sup id="fnref:4"><a href="#fn:4" class="footnote">2</a></sup>
         </p>
         <aside class="footnotes">
             <hr>
@@ -31,10 +130,12 @@
         </aside>
     </article>
 
-    <script src="dist/littlefoot.js" type="application/javascript"></script>
+    <script src="https://unpkg.com/littlefoot/dist/littlefoot.js" type="application/javascript"></script>
     <script type="application/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             littlefoot.littlefoot(); // Initialize Littlefoot
         });
     </script>
 </body>
+
+</html>
