@@ -18,7 +18,7 @@ export const DEFAULT_SETTINGS: Settings = {
   dismissDelay: 100,
   dismissOnUnhover: false,
   dismissOnDocumentTouch: true,
-  footnoteSelector: 'div',
+  footnoteSelector: 'li',
   hoverDelay: 250,
   numberResetSelector: '',
   scope: '',
