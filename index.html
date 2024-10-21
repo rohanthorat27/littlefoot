@@ -8,24 +8,30 @@
 <body>
     <article>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <sup id="fnref:1"></sup>
-            Proin fermentum leo vel orci porta non pulvinar. <sup id="fnref:2"><a href="#fn:2"
-                    class="footnote">...</a></sup>
+            This shouldn't work. <sup id="fnref:2"><a href="#fn:2" class="footnote">...</a></sup>
         </p>
         <aside class="footnotes">
             <hr>
             <ol>
-                <li id="fn:1">
-                    <p>This is footnote number 1. <a href="#fnref:1" class="reversefootnote">&#160;&#8617;</a></p>
-                </li>
                 <li id="fn:2">
-                    <p>This is footnote number 2. <a href="#fnref:2" class="reversefootnote">&#160;&#8617;</a></p>
+                    <p>This is footnote number 1. <a href="#fnref:2" class="reversefootnote">&#160;&#8617;</a></p>
                 </li>
+            </ol>
+        </aside>
+        <p>
+            This should work. <sup id="fnref:4"><a href="#fn:4" class="footnote">...</a></sup>
+        </p>
+        <aside class="footnotes">
+            <hr>
+            <ol>
+                <div id="fn:4">
+                    <p>This is footnote number 2. <a href="#fnref:4" class="reversefootnote">&#160;&#8617;</a></p>
+                </div>
             </ol>
         </aside>
     </article>
 
-    <script src="node_modules/littlefoot/dist/littlefoot.js" type="application/javascript"></script>
+    <script src="dist/littlefoot.js" type="application/javascript"></script>
     <script type="application/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             littlefoot.littlefoot(); // Initialize Littlefoot
